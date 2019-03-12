@@ -42,9 +42,13 @@ var timerID;
 
 $(document).ready(function() {
 
+    console.log("ANSWERS: ");
+    questions.forEach(function(x) {
+        console.log(x.answer);
+    });
+
     $("#start-button").on("click", function() {
 
-        console.log("In start button");
         $("#start-button").hide();
         
         for (var i = questions.length - 1; i >= 0; i--) {
