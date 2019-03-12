@@ -133,8 +133,6 @@ $(document).ready(function() {
         var answers = $("input:checked");
 
         for (var i = 0; i < questions.length; i++){
-            console.log(answers[i].value);
-            console.log(questions[i].answer);
             if (answers[i] === undefined){
                 unanswered++;
             } else if (answers[i].value === questions[i].answer) {
