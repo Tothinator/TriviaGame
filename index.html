@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</head>
+<body>
+    
+    <wrapper>
+        <navbar class="navbar navbar-expand navbar-dark bg-orange">
+            <div class="container">
+                <nav class="navbar-brand">
+                    <h1 id="page-title">Trivia Game</h1>
+                </nav>
+            </div>
+        </navbar>
+
+        <div class="container">
+            <div class="main-content">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1>Rocket League Trivia Game!</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <button id="start-button" class="btn btn-primary btn-large">Start</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <span id="timer"></span>
+                    </div>
+                </div>
+                <form class="text-center" id="question-container">
+                    <button class="btn btn-primary" type="submit" id="submit-button">Submit</button>
+                </form>
+                <div id="result-container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <p>Correct answers: <span id="correct-answers"></span></p>
+                            <p>Incorrect answers: <span id="incorrect-answers"></span></p>
+                            <p>Unanswered questions: <span id="unanswered"></span></p>
+                            <button id="reset-button" class="btn btn-primary btn-large">Reset</button>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </wrapper>
+
+</body>
+</html>
