@@ -42,11 +42,15 @@ var timerID;
 
 $(document).ready(function() {
 
+    // prints answers to console
     console.log("ANSWERS: ");
     questions.forEach(function(x) {
         console.log(x.answer);
     });
 
+
+    // On clicking start the questions divs & multiple choice answers are built
+    // dynamically on the questions array and the question objects
     $("#start-button").on("click", function() {
 
         $("#start-button").hide();
@@ -61,21 +65,24 @@ $(document).ready(function() {
         startTimer();
     });
 
+    // Prevents the submit from happening and then evaluates the results
     $("#submit-button").on("click", function(event){
         event.preventDefault();
         showResults();
     });
 
+    // Resets the game to the start screen
     $("#reset-button").on("click", function() {
         $("#result-container").hide();
         $("#start-button").show();
         timer = resetTimer;
 
-        // Have to empty the question container but also remake the submit button
+        // removes the questions but keeps the submit button
         $(".form-group").remove();
 
     });
 
+    // Function that makes the question text, appends radio buttons, and then returns it
     function makeFormGroup(ques) {
         var form = $("<div>").addClass("form-group");
         form.append($("<label>").attr("for", "question").text(ques.text).css("display", "block"));
@@ -86,6 +93,7 @@ $(document).ready(function() {
         return form;
     }
 
+    // Makes the radio buttons and adds the question id as name so only 1 can be selected
     function makeRadioButtons(ques, option) {
         var radioDiv = $("<div>").addClass("form-check form-check-inline");
         var radioInput = $("<input>").addClass("form-check-input").attr({
@@ -103,6 +111,8 @@ $(document).ready(function() {
         return radioDiv;
     }
 
+    // starts our timer, doesn't need a handler to handle multiple clicking (time goes faster)
+    // because the start button is hidden
     function startTimer() {
 
         $("#timer").text(timer);
@@ -111,6 +121,7 @@ $(document).ready(function() {
 
     }
 
+    // decrements the timer and then stops when it gets to 0
     function decrementTimer() {
         timer--;
 
@@ -121,6 +132,7 @@ $(document).ready(function() {
         }
     }
 
+    // calls the evaluate and then shows the results
     function showResults(event) {
 
         clearInterval(timerID);
@@ -132,6 +144,7 @@ $(document).ready(function() {
 
     }
 
+    // Tallys the user answers compared to the Questions.answer variable
     function evaluateResults() {
         var correct = 0;
         var incorrect = 0;
