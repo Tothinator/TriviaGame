@@ -61,7 +61,10 @@ $(document).ready(function() {
         startTimer();
     });
 
-    $("#submit-button").on("click", showResults);
+    $("#submit-button").on("click", function(event){
+        event.preventDefault();
+        showResults();
+    });
 
     $("#reset-button").on("click", function() {
         $("#result-container").hide();
@@ -120,7 +123,6 @@ $(document).ready(function() {
 
     function showResults(event) {
 
-        event.preventDefault();
         clearInterval(timerID);
         evaluateResults();
 
